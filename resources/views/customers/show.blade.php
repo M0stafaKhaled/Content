@@ -8,6 +8,10 @@
 <div class="row">
         <div class="col-21">
                         <h1>New Customer</h1>
+                        <p>
+                            
+                            <a href="/customers/{{$customer->id}}/edite">Edite</a>
+                        </p>
                         
         </div>
 </div>
