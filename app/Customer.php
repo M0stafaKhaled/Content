@@ -10,15 +10,13 @@ class Customer extends Model
 
  
     protected $guarded =[];
+    protected $attributes = [
+
+        'active' => 1
+    ];
     public function getActiveAttribute($attribute){
 
-        return[
-
-            0=>'Inactive',
-            1=>'active'
-
-
-        ][$attribute];
+        return $this->activeOption()[$attribute];
     }
     public function scopeActive($query)
     {
@@ -38,6 +36,20 @@ class Customer extends Model
     public function company(){
 
         return $this->belongsTo(Company::class);
+
+    }
+    public function activeOption(){
+
+        return [
+
+
+            1=>'active',
+            0=>'Inactive',
+            2=>'In-Progress'
+            
+
+
+        ];
 
     }
 }

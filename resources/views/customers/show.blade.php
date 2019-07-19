@@ -7,11 +7,21 @@
 
 <div class="row">
         <div class="col-21">
-                        <h1>New Customer</h1>
+                        <h1>Details for {{$customer->name}} </h1>
                         <p>
                             
                             <a href="/customers/{{$customer->id}}/edite">Edite</a>
                         </p>
+
+                        <form  action="/customers/{{$customer->id}}" method="POST" >
+                            @method('delete')
+                            
+                            @csrf
+
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        
+                        
+                        </form>
                         
         </div>
 </div>
