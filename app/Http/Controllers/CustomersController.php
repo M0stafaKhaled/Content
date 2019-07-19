@@ -38,11 +38,11 @@ class CustomersController extends Controller
             return redirect('customers');
     }
 
-    public function show($customer){
+    public function show(Customer $customer){
 
 
 
-         $customer = Customer::find($customer);
+        // $customer = Customer::find( $customer);
         return view('customers.show', compact('customer'));
     }
 

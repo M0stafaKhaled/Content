@@ -17,7 +17,10 @@
 <div class="row">
     <div class="col-21">
 
-        <p><strong>Name</strong> </p>
+        <p><strong>Name</strong> {{$customer->name}} </p>
+        <p><strong>Email</strong> {{$customer->email}} </p>
+        <p><strong>Company</strong> {{$customer->company->name}} </p>
+
                     
                     
     </div>
