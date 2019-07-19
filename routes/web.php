@@ -21,6 +21,7 @@ Route::get('customers','CustomersController@index');
 Route::get('customers/create','CustomersController@create');
 
 Route::post('customers','CustomersController@store');
+Route::get('customers/{customer}','CustomersController@show');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

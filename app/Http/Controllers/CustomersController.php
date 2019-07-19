@@ -9,9 +9,7 @@ class CustomersController extends Controller
 {
     //
 
-
-    public function index (){
-   
+    public function index (){   
         $customers = Customer::all();
         
   return view('customers.index', compact('customers'));
@@ -24,7 +22,9 @@ class CustomersController extends Controller
 
             return view('customers.create',compact('companies'));
   }
-  
+
+
+
     public function store(){
 
             $data = request()->validate([
@@ -34,12 +34,16 @@ class CustomersController extends Controller
                 'active' =>'required',
                 'company_id' =>'required',
             ]);
-       
             Customer::create($data);           
-
             return redirect('customers');
-
-
-        
     }
+
+    public function show($customer){
+
+
+
+         $customer = Customer::find($customer);
+        return view('customers.show', compact('customer'));
+    }
+
 }
